@@ -1,6 +1,6 @@
 <header class="header">
   My basketball list
-  <button (click)="addPlayer()">Add player</button>
+  <button (click)="addPlayer()" *ngIf="crudButtonsShown">Add player</button>
 </header>
 
 <main>
@@ -17,7 +17,7 @@
     <div class="cell">{{ player.championshipCount}}</div>
     <div class="cell">{{ player.mvpCount}}</div>
     <div class="cell">
-      <button (click)="deletePlayer(player.id)">delete</button>
+      <button *ngIf="crudButtonsShown" (click)="deletePlayer(player.id)">delete</button>
     </div>
   </div>
 </main>

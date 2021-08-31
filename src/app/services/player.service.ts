@@ -22,7 +22,7 @@ export class PlayerService {
   {
     id: Math.random().toString(),
     name: 'LeBron James',
-    points: 35586,
+    points: 35367,
     championshipCount: 4,
     mvpCount: 3
   }];
