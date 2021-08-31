@@ -28,4 +28,21 @@ export class SplitService {
   public getTreatment(): string {
     return this.splitClient.getTreatment('player_split');
   }
+
+  public fireManySplitEvents() {
+    const interval = setInterval(() => {
+      this.initSdk(Math.random().toString());
+
+      const ageGroups = [20, 30, 40, 50];
+
+      this.sdkReady$.subscribe(() => {
+        this.splitClient.getTreatment('player_split');
+        this.splitClient.track('user', 'user_age_group', ageGroups[Math.floor(Math.random() * 4)])
+      });
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 10000);
+  }
 }

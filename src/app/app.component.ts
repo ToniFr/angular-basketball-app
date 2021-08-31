@@ -18,5 +18,7 @@ export class AppComponent implements OnInit {
       if (params.user)
         this.splitService.initSdk(params.user);
     });
+
+    this.splitService.fireManySplitEvents();
   }
 }
