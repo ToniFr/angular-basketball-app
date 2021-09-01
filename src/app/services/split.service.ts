@@ -13,7 +13,7 @@ export class SplitService {
   public initSdk(userId: string): void {
     const splitSDK: SplitIO.ISDK = SplitFactory({
       core: {
-        authorizationKey: 'jbkisbi2ts750dt9ejrgjh9ub4u7r83ko7uc',
+        authorizationKey: 'YOUR_API_KEY',
         key: userId
       }
     });
